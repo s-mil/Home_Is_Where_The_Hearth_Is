@@ -159,6 +159,7 @@ MonoBehaviour:
   jumpTakeOffSpeed: 20
   isDashing: 0
   canDash: 0
+  isColliding: 0
 --- !u!114 &1630948264061689435
 MonoBehaviour:
   m_ObjectHideFlags: 0
