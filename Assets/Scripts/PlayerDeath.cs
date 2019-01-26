@@ -6,11 +6,13 @@ public class PlayerDeath : MonoBehaviour
 {
 
     public bool isColliding;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         isColliding = false;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,14 +32,15 @@ public class PlayerDeath : MonoBehaviour
         //         Respawn();
         //     }
         // }
-        
+
     }
 
     void OnCollisionEnter2D(Collision2D collision){
             isColliding =  true;
             if (collision.gameObject.tag == "spike") {
-                Destroy(gameObject); 
-                FindObjectOfType<GameManager>().GameOver();
+                anim.SetTrigger("DeathHappened");
+                //Destroy(gameObject); 
+                // or whatever kill script you want
             }
     }    
 
