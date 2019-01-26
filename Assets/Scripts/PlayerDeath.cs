@@ -21,7 +21,7 @@ public class PlayerDeath : MonoBehaviour
         {
             /// <summary>
             /// if the collision is with a entity that kills
-            /// </summary>  
+          /// </summary>  
             if (other.GetComponent<Collider>().CompareTag("INSERT_TAG"))
             {
                 Respawn();
@@ -29,6 +29,13 @@ public class PlayerDeath : MonoBehaviour
         }
 
     }
+
+    void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.tag == “spikes”) {
+            Destroy(gameObject); 
+            // or whatever kill script you want
+        }
+    }    
 
     /// <summary>
     /// The method that respawns the player at Home
