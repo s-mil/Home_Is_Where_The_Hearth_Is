@@ -7,6 +7,7 @@ public class PlayerDeath : MonoBehaviour
 
     public bool isColliding;
     Animator anim;
+    // private var particle : GameObject;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class PlayerDeath : MonoBehaviour
             isColliding =  true;
             if (collision.gameObject.tag == "spike") {
                 anim.SetTrigger("DeathHappened");
+
                 //Destroy(gameObject); 
                 FindObjectOfType<GameManager>().GameOver();
                 // or whatever kill script you want
