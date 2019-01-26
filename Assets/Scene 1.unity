@@ -237,11 +237,11 @@ GameObject:
   - component: {fileID: 986187596}
   - component: {fileID: 986187595}
   - component: {fileID: 986187594}
-  - component: {fileID: 986187593}
   - component: {fileID: 986187592}
+  - component: {fileID: 986187593}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,8 +258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c417256d39d99040977bd7c2208a690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
-  jumpForce: 500
+  moveSpeed: 500
+  jumpForce: 6000
 --- !u!70 &986187593
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -273,8 +273,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Offset: {x: -0.059332132, y: 0}
+  m_Size: {x: 1.4307733, y: 2.56}
   m_Direction: 0
 --- !u!50 &986187594
 Rigidbody2D:
@@ -288,7 +288,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5
+  m_Mass: 50
   m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -331,10 +331,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 305139277
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5288d9c89f02269409c8f5e85df8f39d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 29cad723d1b913546bbfc673c42ca7b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -353,8 +353,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986187591}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.79, y: -1.45, z: 0}
-  m_LocalScale: {x: 1, y: 1.588, z: 1}
+  m_LocalPosition: {x: 0.612, y: -1.082, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
