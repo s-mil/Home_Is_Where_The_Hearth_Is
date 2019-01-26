@@ -7,7 +7,7 @@ public class PhysicsObject : MonoBehaviour
 
     public float minGroundNormalY = .65f;
     public float gravityModifier = 1f;
-    protected Vector2 targetVelocity;
+    public Vector2 targetVelocity;
     public  bool grounded;
     protected Vector2 groundNormal;
     protected Rigidbody2D rb2d;
@@ -15,11 +15,13 @@ public class PhysicsObject : MonoBehaviour
     protected ContactFilter2D contactFilter;
     protected RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
     protected List<RaycastHit2D> hitBufferList = new List<RaycastHit2D>(16);
-
+    public float wallDirection = 0.0f;
 
     protected const float minMoveDistance = 0.001f;
     protected const float shellRadius = 0.01f;
+    public bool walljump;
 
+    public bool right;
     void OnEnable()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -49,7 +51,7 @@ public class PhysicsObject : MonoBehaviour
 
         velocity.x = targetVelocity.x;
 
-        //grounded = false;
+        grounded = false;
 
         Vector2 deltaPosition = velocity * Time.deltaTime;
 
@@ -103,27 +105,29 @@ public class PhysicsObject : MonoBehaviour
         rb2d.position = rb2d.position + move.normalized * distance;
     }
 
-    protected virtual IEnumerator Dash(){
-        yield return null;
-    }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         
-        if (collision.gameObject.tag == "ground")
+        if (collision.gameObject.tag == "wall")
         {
+            Collider2D collider = collision.collider;
+            walljump = true;
+           
 
-            grounded = true;
-            Debug.Log("are we here");
+            Vector3 contactPoint = collision.contacts[0].point;
+            Vector3 center = collider.bounds.center;
+
+             right = contactPoint.x > center.x;
+
         }
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
 
-        if (collision.gameObject.tag == "ground")
+        if (collision.gameObject.tag == "wall")
         {
-            grounded = false;
+            walljump = false;
             
         }
     }

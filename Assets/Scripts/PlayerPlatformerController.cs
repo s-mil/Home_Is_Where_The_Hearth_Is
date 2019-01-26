@@ -8,11 +8,14 @@ public class PlayerPlatformerController : PhysicsObject
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
     public bool isDashing;
+    public bool isWallJumping;
+    public bool wallSide;
     public bool canDash;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private bool facingRight;
 
+    float tempgravity;
     // Use this for initialization
     void Awake()
     {
@@ -20,11 +23,12 @@ public class PlayerPlatformerController : PhysicsObject
         animator = GetComponent<Animator>();
         canDash = true;
         facingRight = true;
+        isWallJumping = false;
     }
 
     protected override void ComputeVelocity()
     {
-        Debug.Log("" + velocity.x);
+        
         Vector2 move = Vector2.zero;
 
         if (!isDashing) {
@@ -42,6 +46,32 @@ public class PlayerPlatformerController : PhysicsObject
                 velocity.y = velocity.y * 0.5f;
             }
         }
+
+        if (Input.GetButtonDown("Jump") && !grounded && walljump)
+        {
+            wallSide = right;
+            
+            if (isWallJumping)
+            {
+                StopCoroutine(WallJump());
+                isWallJumping = false;
+            }
+            StartCoroutine(WallJump());
+        }
+
+        if (walljump &&  !grounded)
+        {
+            tempgravity = gravityModifier;
+            gravityModifier = gravityModifier/2;
+        }
+
+        else
+        {
+            Debug.Log("set it back");
+            gravityModifier = 5;
+        }
+
+
 
         if (move.x > 0.01f){
             facingRight = true;
@@ -70,13 +100,34 @@ public class PlayerPlatformerController : PhysicsObject
             } else {
                 targetVelocity = new Vector2(1,0) * maxSpeed * 2.5f * -1;
             }
-        } else {
+        } else if (isWallJumping)
+        {
+            if (wallSide)
+            {
+                velocity.y = jumpTakeOffSpeed * 1.25f;
+                targetVelocity = new Vector2(1, 0) * maxSpeed * -1;
+            }
+            else
+            {
+                velocity.y = jumpTakeOffSpeed * 1.25f;
+                targetVelocity = new Vector2(1, 0) * maxSpeed * 1;
+            }
+        }
+        else
+        {
             targetVelocity = move * maxSpeed;
-            gravityModifier = 5;
+            
         }
     }
 
-    protected override IEnumerator Dash()
+    protected IEnumerator WallJump()
+    {
+        isWallJumping = true;
+        yield return new WaitForSeconds(0.2f);
+        isWallJumping = false;
+    }
+
+    protected IEnumerator Dash()
     {
         rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
         yield return new WaitForSeconds(0.025f);
@@ -91,6 +142,8 @@ public class PlayerPlatformerController : PhysicsObject
         yield return new WaitForSeconds(0.5f);
         canDash = true;
     }
+
+
 
    
 

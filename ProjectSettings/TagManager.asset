@@ -8,6 +8,7 @@ TagManager:
   - spike
   - movingPlatform
   - ice
+  - wall
   layers:
   - Default
   - TransparentFX
