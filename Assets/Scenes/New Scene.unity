@@ -119,62 +119,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1622063169114717167, guid: b886a388fa2cc6e40be69dcf41253e1c,
+    - target: {fileID: 1630948264061689430, guid: b886a388fa2cc6e40be69dcf41253e1c,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1622063169114717156, guid: b886a388fa2cc6e40be69dcf41253e1c,
+    - target: {fileID: 1630948264061689436, guid: b886a388fa2cc6e40be69dcf41253e1c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.07
+      value: 0.47
       objectReference: {fileID: 0}
-    - target: {fileID: 1622063169114717156, guid: b886a388fa2cc6e40be69dcf41253e1c,
+    - target: {fileID: 1630948264061689436, guid: b886a388fa2cc6e40be69dcf41253e1c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: -0.01
       objectReference: {fileID: 0}
-    - target: {fileID: 1622063169114717156, guid: b886a388fa2cc6e40be69dcf41253e1c,
+    - target: {fileID: 1630948264061689436, guid: b886a388fa2cc6e40be69dcf41253e1c,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1622063169114717156, guid: b886a388fa2cc6e40be69dcf41253e1c,
+    - target: {fileID: 1630948264061689436, guid: b886a388fa2cc6e40be69dcf41253e1c,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1622063169114717156, guid: b886a388fa2cc6e40be69dcf41253e1c,
+    - target: {fileID: 1630948264061689436, guid: b886a388fa2cc6e40be69dcf41253e1c,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1622063169114717156, guid: b886a388fa2cc6e40be69dcf41253e1c,
+    - target: {fileID: 1630948264061689436, guid: b886a388fa2cc6e40be69dcf41253e1c,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1622063169114717156, guid: b886a388fa2cc6e40be69dcf41253e1c,
+    - target: {fileID: 1630948264061689436, guid: b886a388fa2cc6e40be69dcf41253e1c,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1622063169114717156, guid: b886a388fa2cc6e40be69dcf41253e1c,
+    - target: {fileID: 1630948264061689436, guid: b886a388fa2cc6e40be69dcf41253e1c,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1622063169114717156, guid: b886a388fa2cc6e40be69dcf41253e1c,
+    - target: {fileID: 1630948264061689436, guid: b886a388fa2cc6e40be69dcf41253e1c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1622063169114717156, guid: b886a388fa2cc6e40be69dcf41253e1c,
+    - target: {fileID: 1630948264061689436, guid: b886a388fa2cc6e40be69dcf41253e1c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1622063169114717156, guid: b886a388fa2cc6e40be69dcf41253e1c,
+    - target: {fileID: 1630948264061689436, guid: b886a388fa2cc6e40be69dcf41253e1c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
@@ -1066,25 +1066,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &878205224 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1622063169114717167, guid: b886a388fa2cc6e40be69dcf41253e1c,
-    type: 3}
-  m_PrefabInstance: {fileID: 46806653}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &878205230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 878205224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87a79e81f24085d4e82265c248c44293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isColliding: 0
 --- !u!1 &1121220622
 GameObject:
   m_ObjectHideFlags: 0
