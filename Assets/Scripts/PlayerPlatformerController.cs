@@ -7,7 +7,8 @@ public class PlayerPlatformerController : PhysicsObject
 
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
-    private bool isDashing;
+    public bool isDashing;
+    public bool canDash;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private bool facingRight;
@@ -17,6 +18,8 @@ public class PlayerPlatformerController : PhysicsObject
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        canDash = true;
+        facingRight = true;
     }
 
     protected override void ComputeVelocity()
@@ -24,7 +27,9 @@ public class PlayerPlatformerController : PhysicsObject
         Debug.Log("" + velocity.x);
         Vector2 move = Vector2.zero;
 
-        move.x = Input.GetAxis("Horizontal");
+        if (!isDashing) {
+            move.x = Input.GetAxis("Horizontal");
+        }
 
         if (Input.GetButtonDown("Jump") && grounded)
         {
@@ -49,9 +54,11 @@ public class PlayerPlatformerController : PhysicsObject
         animator.SetBool("grounded", grounded);
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
-        if (Input.GetButtonDown("Fire3"))
+        if (Input.GetButtonDown("Fire3") && !isDashing && canDash)
         {
+            canDash = false;
             StartCoroutine(Dash());
+            StartCoroutine(dashCooldown());
         }
 
         if (isDashing) {
@@ -70,7 +77,12 @@ public class PlayerPlatformerController : PhysicsObject
         isDashing = true;
         yield return new WaitForSeconds(0.1f);
         isDashing = false;
+    }
 
+    IEnumerator dashCooldown()
+    {
+        yield return new WaitForSeconds(0.5f);
+        canDash = true;
     }
 
    
