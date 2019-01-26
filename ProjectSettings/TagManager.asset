@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ground
   - spike
+  - movingPlatform
   layers:
   - Default
   - TransparentFX
