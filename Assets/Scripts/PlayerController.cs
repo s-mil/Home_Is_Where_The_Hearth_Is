@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             
             if (grounded == false)
             {
-                rb.AddForce(transform.right * (moveSpeed/2));
+                rb.AddForce(transform.right * (moveSpeed/4));
             }
         }
         if (moveLeft == true)
@@ -82,15 +82,15 @@ public class PlayerController : MonoBehaviour
             }
             if (grounded == false)
             {
-                rb.AddForce(transform.right * -1 * (moveSpeed/2));
+                rb.AddForce(transform.right * -1 * (moveSpeed/4));
             }
         }
-        if (jump == true && grounded == true)
+        if (jump == true && grounded)
         {
             rb.AddForce(transform.up * jumpForce);
         }
 
-        if ((rb.velocity.magnitude > maxSpeed) )
+        if (rb.velocity.magnitude > maxSpeed && grounded)
         {
             rb.velocity = rb.velocity.normalized * maxSpeed;
         }
