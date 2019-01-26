@@ -4,47 +4,53 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
+
+    public bool isColliding;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        isColliding = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /// <summary>
-        /// Detects a Trigger entered by the player
-        /// </summary>
-        /// <param name="other"></param>
-        void OnTriggerEnter(Collider other)
-        {
-            /// <summary>
-            /// if the collision is with a entity that kills
-          /// </summary>  
-            if (other.GetComponent<Collider>().CompareTag("INSERT_TAG"))
-            {
-                Respawn();
-            }
-        }
-
+        // /// <summary>
+        // /// Detects a Trigger entered by the player
+        // /// </summary>
+        // /// <param name="other"></param>
+        // void OnTriggerEnter(Collider other)
+        // {
+        //     /// <summary>
+        //     /// if the collision is with a entity that kills
+        //   /// </summary>  
+        //     if (other.GetComponent<Collider>().CompareTag("INSERT_TAG"))
+        //     {
+        //         Respawn();
+        //     }
+        // }
+        
     }
 
-    void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == “spikes”) {
-            Destroy(gameObject); 
-            // or whatever kill script you want
-        }
+    void OnCollisionEnter2D(Collision2D collision){
+            isColliding =  true;
+            if (collision.gameObject.tag == "spike") {
+                Destroy(gameObject); 
+                // or whatever kill script you want
+            }
     }    
 
-    /// <summary>
-    /// The method that respawns the player at Home
-    /// </summary>
-    void Respawn()
-    {
-        SceneManager.LoadScene("<HOME_Scene>");
-        // Add any kind of acknoledgement of Death 
+   
 
-    }
+    // /// <summary>
+    // /// The method that respawns the player at Home
+    // /// </summary>
+    // void Respawn()
+    // {
+    //     SceneManager.LoadScene("<HOME_Scene>");
+    //     // Add any kind of acknoledgement of Death 
+
+    // }
 
 }
