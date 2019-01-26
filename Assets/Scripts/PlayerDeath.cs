@@ -40,6 +40,7 @@ public class PlayerDeath : MonoBehaviour
             if (collision.gameObject.tag == "spike") {
                 anim.SetTrigger("DeathHappened");
                 //Destroy(gameObject); 
+                FindObjectOfType<GameManager>().GameOver();
                 // or whatever kill script you want
             }
     }    
