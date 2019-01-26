@@ -8,7 +8,7 @@ public class PhysicsObject : MonoBehaviour
     public float minGroundNormalY = .65f;
     public float gravityModifier = 1f;
     protected Vector2 targetVelocity;
-    protected bool grounded;
+    public  bool grounded;
     protected Vector2 groundNormal;
     protected Rigidbody2D rb2d;
     protected Vector2 velocity;
@@ -49,7 +49,7 @@ public class PhysicsObject : MonoBehaviour
 
         velocity.x = targetVelocity.x;
 
-        grounded = false;
+        //grounded = false;
 
         Vector2 deltaPosition = velocity * Time.deltaTime;
 
@@ -107,7 +107,27 @@ public class PhysicsObject : MonoBehaviour
         yield return null;
     }
 
-    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if (collision.gameObject.tag == "ground")
+        {
+
+            grounded = true;
+            Debug.Log("are we here");
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.tag == "ground")
+        {
+            grounded = false;
+            
+        }
+    }
+
 
 
 }
