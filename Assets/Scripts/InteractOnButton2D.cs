@@ -11,12 +11,14 @@ public class InteractOnButton2D : InteractOnTrigger2D
     protected override void ExecuteOnEnter(Collider2D other)
     {
         m_CanExecuteButtons = true;
+        Debug.Log("Dialogue collision detected");
         OnEnter.Invoke ();
     }
 
     protected override void ExecuteOnExit(Collider2D other)
     {
         m_CanExecuteButtons = false;
+        Debug.Log("End collision, removing dialogue");
         OnExit.Invoke ();
     }
 
