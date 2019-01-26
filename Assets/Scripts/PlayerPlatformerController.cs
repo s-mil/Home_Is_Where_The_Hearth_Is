@@ -57,18 +57,23 @@ public class PlayerPlatformerController : PhysicsObject
         if (Input.GetButtonDown("Fire3") && !isDashing && canDash)
         {
             canDash = false;
+            gravityModifier = 0;
+            rb2d.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
             StartCoroutine(Dash());
             StartCoroutine(dashCooldown());
         }
 
         if (isDashing) {
+            velocity.y = 0;
             if(facingRight){
                 targetVelocity = new Vector2(1,0) * maxSpeed * 2.0f;
             } else {
                 targetVelocity = new Vector2(1,0) * maxSpeed * 2.0f * -1;
             }
         } else {
+            rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
             targetVelocity = move * maxSpeed;
+            gravityModifier = 5;
         }
     }
 
