@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     bool jump;
     public float jumpForce = 1.0f;
 
+    public float maxSpeed = 1.0f;
+
     bool grounded = true;
 
     // Start is called before the first frame update
@@ -60,17 +62,42 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {   if (moveRight == true)
         {
-            rb.AddForce(transform.right * moveSpeed);
+            if (grounded == true)
+            {
+                rb.AddForce(transform.right * moveSpeed);
+            }
+            
+            if (grounded == false)
+            {
+                rb.AddForce(transform.right * (moveSpeed/2));
+            }
         }
         if (moveLeft == true)
         {
-            rb.AddForce(transform.right*-1 * moveSpeed);
+            if (grounded == true)
+            {
+                rb.AddForce(transform.right * -1 * moveSpeed);
+            }
+            if (grounded == false)
+            {
+                rb.AddForce(transform.right * -1 * (moveSpeed/2));
+            }
         }
         if (jump == true && grounded == true)
         {
             rb.AddForce(transform.up * jumpForce);
         }
+
+        if (rb.velocity.magnitude > maxSpeed && grounded == true)
+        {
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
+
+
     }
+
+    
+   
 
     void OnCollisionEnter2D(Collision2D collision)
     {
