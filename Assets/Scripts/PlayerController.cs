@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//this class handles player movement (i.e walking, jumping, and dashing
 public class PlayerController : MonoBehaviour
-{
+{  //initialize global variables and flags
     bool moveLeft;
     bool moveRight;
     Rigidbody2D rb;
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {  //initialize flags and rigidbody
         rb = GetComponent<Rigidbody2D>();
         moveLeft = false;
         moveRight = false;
@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //sets flags for input on left and right and jump button
         if (Input.GetAxis("Horizontal") > 0)
         {
             moveRight = true;
@@ -60,7 +61,8 @@ public class PlayerController : MonoBehaviour
     }
 
     void FixedUpdate()
-    {   if (moveRight == true)
+    { //This method updates force depending on user keypress
+        if (moveRight == true)
         {
             if (grounded == true)
             {
@@ -88,7 +90,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(transform.up * jumpForce);
         }
 
-        if (rb.velocity.magnitude > maxSpeed && grounded == true)
+        if ((rb.velocity.magnitude > maxSpeed) )
         {
             rb.velocity = rb.velocity.normalized * maxSpeed;
         }
