@@ -58,20 +58,19 @@ public class PlayerPlatformerController : PhysicsObject
         {
             canDash = false;
             gravityModifier = 0;
-            rb2d.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
             StartCoroutine(Dash());
             StartCoroutine(dashCooldown());
         }
 
         if (isDashing) {
+            rb2d.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
             velocity.y = 0;
             if(facingRight){
-                targetVelocity = new Vector2(1,0) * maxSpeed * 2.0f;
+                targetVelocity = new Vector2(1,0) * maxSpeed * 2.5f;
             } else {
-                targetVelocity = new Vector2(1,0) * maxSpeed * 2.0f * -1;
+                targetVelocity = new Vector2(1,0) * maxSpeed * 2.5f * -1;
             }
         } else {
-            rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
             targetVelocity = move * maxSpeed;
             gravityModifier = 5;
         }
@@ -79,9 +78,12 @@ public class PlayerPlatformerController : PhysicsObject
 
     protected override IEnumerator Dash()
     {
+        rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+        yield return new WaitForSeconds(0.025f);
         isDashing = true;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.15f);
         isDashing = false;
+        rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     IEnumerator dashCooldown()
@@ -89,9 +91,8 @@ public class PlayerPlatformerController : PhysicsObject
         yield return new WaitForSeconds(0.5f);
         canDash = true;
     }
-    
-   
 
+   
 
 
 
