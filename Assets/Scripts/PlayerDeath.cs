@@ -37,7 +37,7 @@ public class PlayerDeath : MonoBehaviour
             isColliding =  true;
             if (collision.gameObject.tag == "spike") {
                 Destroy(gameObject); 
-                // or whatever kill script you want
+                FindObjectOfType<GameManager>().GameOver();
             }
     }    
 
