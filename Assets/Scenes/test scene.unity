@@ -179,11 +179,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1630948264061689439, guid: b886a388fa2cc6e40be69dcf41253e1c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b886a388fa2cc6e40be69dcf41253e1c, type: 3}
 --- !u!1 &84242902
@@ -1099,6 +1094,8 @@ GameObject:
   m_Component:
   - component: {fileID: 279004330}
   - component: {fileID: 279004329}
+  - component: {fileID: 279004332}
+  - component: {fileID: 279004331}
   m_Layer: 0
   m_Name: sign1
   m_TagString: Untagged
@@ -1168,6 +1165,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &279004331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279004328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d0b6d06686852d42a8a3a30888443a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layers:
+    serializedVersion: 2
+    m_Bits: 0
+  OnCollision:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!60 &279004332
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279004328}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.45999998, y: 0.51}
+      - {x: -0.4558022, y: 0.0732089}
+      - {x: -0.11677122, y: 0.07419777}
+      - {x: -0.13, y: -0.64}
+      - {x: 0.13, y: -0.64}
+      - {x: 0.12417793, y: 0.072966635}
+      - {x: 0.43774176, y: 0.07302222}
+      - {x: 0.45999998, y: 0.51}
 --- !u!1 &1121220622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,25 +1248,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1444192902 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1630948264061689430, guid: b886a388fa2cc6e40be69dcf41253e1c,
-    type: 3}
-  m_PrefabInstance: {fileID: 46806653}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1444192910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1444192902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87a79e81f24085d4e82265c248c44293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isColliding: 0
 --- !u!1 &1744266744
 GameObject:
   m_ObjectHideFlags: 0

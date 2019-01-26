@@ -14,13 +14,13 @@ public class InteractOnCollision2D : MonoBehaviour
         layers = LayerMask.NameToLayer("Everything");
     }
 
-    // void OnCollisionEnter2D (Collision2D collision)
-    // {
-    //     if (layers.Contains (collision.gameObject))
-    //     {
-    //         OnCollision.Invoke();
-    //     }
-    // }
+    void OnCollisionEnter2D (Collision2D collision)
+    {
+        if (layers.Contains (collision.gameObject))
+        {
+            OnCollision.Invoke();
+        }
+    }
 
     void OnDrawGizmos()
     {
