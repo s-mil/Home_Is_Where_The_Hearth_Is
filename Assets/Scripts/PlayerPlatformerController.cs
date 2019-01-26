@@ -10,6 +10,7 @@ public class PlayerPlatformerController : PhysicsObject
     private bool isDashing;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private bool facingRight;
 
     // Use this for initialization
     void Awake()
@@ -37,11 +38,13 @@ public class PlayerPlatformerController : PhysicsObject
             }
         }
 
-            bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
-            if (flipSprite)
-            {
-                spriteRenderer.flipX = !spriteRenderer.flipX;
-            }
+        if (move.x > 0.01f){
+            facingRight = true;
+            spriteRenderer.flipX = false;
+        } else if (move.x < -0.01f){
+            facingRight = false;
+            spriteRenderer.flipX = true;
+        }
 
         animator.SetBool("grounded", grounded);
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
@@ -52,7 +55,11 @@ public class PlayerPlatformerController : PhysicsObject
         }
 
         if (isDashing) {
-            targetVelocity = new Vector2(1,0) * maxSpeed * 2.0f;
+            if(facingRight){
+                targetVelocity = new Vector2(1,0) * maxSpeed * 2.0f;
+            } else {
+                targetVelocity = new Vector2(1,0) * maxSpeed * 2.0f * -1;
+            }
         } else {
             targetVelocity = move * maxSpeed;
         }
