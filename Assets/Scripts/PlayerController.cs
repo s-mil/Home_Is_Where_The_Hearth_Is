@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     public float maxSpeed = 1.0f;
 
-    bool grounded = true;
+    bool grounded = false;
 
     // Start is called before the first frame update
     void Start()
