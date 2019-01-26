@@ -7,8 +7,7 @@ public class PlayerPlatformerController : PhysicsObject
 
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
-    public float dashboost;
-
+    private bool isDashing;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
@@ -17,7 +16,6 @@ public class PlayerPlatformerController : PhysicsObject
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        
     }
 
     protected override void ComputeVelocity()
@@ -48,15 +46,25 @@ public class PlayerPlatformerController : PhysicsObject
         animator.SetBool("grounded", grounded);
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
-        targetVelocity = move * maxSpeed;
-
-        if (Input.GetButton("Fire3"))
+        if (Input.GetButtonDown("Fire3"))
         {
-            move.x = dashboost;
+            StartCoroutine(Dash());
+        }
+
+        if (isDashing) {
+            targetVelocity = new Vector2(1,0) * maxSpeed * 2.0f;
+        } else {
+            targetVelocity = move * maxSpeed;
         }
     }
 
+    protected override IEnumerator Dash()
+    {
+        isDashing = true;
+        yield return new WaitForSeconds(0.1f);
+        isDashing = false;
 
+    }
 
    
 

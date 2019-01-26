@@ -7,7 +7,6 @@ public class PhysicsObject : MonoBehaviour
 
     public float minGroundNormalY = .65f;
     public float gravityModifier = 1f;
-
     protected Vector2 targetVelocity;
     protected bool grounded;
     protected Vector2 groundNormal;
@@ -104,6 +103,10 @@ public class PhysicsObject : MonoBehaviour
         }
 
         rb2d.position = rb2d.position + move.normalized * distance;
+    }
+
+    protected virtual IEnumerator Dash(){
+        yield return null;
     }
 
 }
