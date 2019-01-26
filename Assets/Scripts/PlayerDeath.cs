@@ -22,7 +22,7 @@ public class PlayerDeath : MonoBehaviour
             /// <summary>
             /// if the collision is with a entity that kills
             /// </summary>  
-            if (other.collider.CompareTag("INSERT_TAG"))
+            if (other.GetComponent<Collider>().CompareTag("INSERT_TAG"))
             {
                 Respawn();
             }
