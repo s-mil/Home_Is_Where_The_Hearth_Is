@@ -58,6 +58,7 @@ public class BobTheBuilder : MonoBehaviour
                 WallR.GetComponent<Renderer>().enabled = true;
                 fillerEnable();
                 door.GetComponent<Renderer>().enabled = true;
+                window1.GetComponent<Renderer>().enabled = true;
                 break;
             case 5:
                 FloorL.GetComponent<Renderer>().enabled = true;
@@ -67,6 +68,7 @@ public class BobTheBuilder : MonoBehaviour
                 fillerEnable();
                 door.GetComponent<Renderer>().enabled = true;
                 window1.GetComponent<Renderer>().enabled = true;
+                 Roof.GetComponent<Renderer>().enabled = true;
                 break;
             default:
                 FloorL.GetComponent<Renderer>().enabled = true;
