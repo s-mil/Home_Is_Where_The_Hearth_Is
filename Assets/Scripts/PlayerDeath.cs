@@ -6,14 +6,21 @@ public class PlayerDeath : MonoBehaviour
 {
 
     public bool isColliding;
+    public bool isDead;
     Animator anim;
-    // private var particle : GameObject;
+
+    private AudioSource audio;
+
+    public AudioSource Audio { get => audio; set => audio = value; }
 
     // Start is called before the first frame update
     void Start()
     {
         isColliding = false;
+        isDead = false;
         anim = GetComponent<Animator>();
+        Audio = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -41,9 +48,15 @@ public class PlayerDeath : MonoBehaviour
             if (collision.gameObject.tag == "spike") {
                 anim.SetTrigger("DeathHappened");
 
+                if(isDead == false){
+                    Audio.Play();
+                }
+
                 //Destroy(gameObject); 
                 FindObjectOfType<GameManager>().GameOver();
                 // or whatever kill script you want
+
+                isDead = true;
             }
     }    
 
