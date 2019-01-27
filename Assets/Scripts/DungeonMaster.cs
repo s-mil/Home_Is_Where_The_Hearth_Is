@@ -63,5 +63,11 @@ public class DungeonMaster : MonoBehaviour
         Debug.Log("Progress Increased to: "+progress);
     }
 
+    public void Death()
+    {
+        level--;
+        Debug.Log("Level Decremented to: "+ level);
+    }
+
 
 }

@@ -54,7 +54,7 @@ public class PlayerDeath : MonoBehaviour
             {
                 Audio.Play();
             }
-
+            FindObjectOfType<DungeonMaster>().Death();
             //Destroy(gameObject); 
             FindObjectOfType<GameManager>().GameOver();
             // or whatever kill script you want
