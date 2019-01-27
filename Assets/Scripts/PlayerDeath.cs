@@ -7,7 +7,7 @@ public class PlayerDeath : MonoBehaviour
 
     public bool isColliding;
     public bool isDead;
-    public bool isCollected;
+
     Animator anim;
 
     private AudioSource audio;
@@ -21,7 +21,10 @@ public class PlayerDeath : MonoBehaviour
         isDead = false;
         anim = GetComponent<Animator>();
         Audio = GetComponent<AudioSource>();
-        isCollected = false;
+
+    }
+    private void Awake()
+    {
 
     }
 
@@ -48,28 +51,31 @@ public class PlayerDeath : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         isColliding = true;
-        if(!isDead){
-        if (collision.gameObject.tag == "spike")
+        if (!isDead)
         {
-            anim.SetTrigger("DeathHappened");
-
-            if (isDead == false)
+            if (collision.gameObject.tag == "spike")
             {
-                Audio.Play();
-            }
-            FindObjectOfType<DungeonMaster>().Death();
-            //Destroy(gameObject); 
-            FindObjectOfType<GameManager>().GameOver();
-            // or whatever kill script you want
+                anim.SetTrigger("DeathHappened");
 
-            isDead = true;
-        }
+                if (isDead == false)
+                {
+                    Audio.Play();
+                }
+                FindObjectOfType<DungeonMaster>().Death();
+                //Destroy(gameObject); 
+                FindObjectOfType<GameManager>().GameOver();
+                // or whatever kill script you want
+
+                isDead = true;
+            }
         }
 
         if (collision.gameObject.tag == "Warp")
         {
             Debug.Log("Warp COlision");
+            FindObjectOfType<DungeonMaster>().isCollected = false;
             FindObjectOfType<DungeonMaster>().Warp();
+
 
         }
 
@@ -80,11 +86,12 @@ public class PlayerDeath : MonoBehaviour
     {
         if (other.gameObject.tag == "keyitem")
         {
-            if(!isCollected){
-            Debug.Log("KEY ITEM TRIGGER");
-            FindObjectOfType<DungeonMaster>().ProgressUp();
-            isCollected=true;
+            if (!FindObjectOfType<DungeonMaster>().isCollected)
+            {
+                Debug.Log("KEY ITEM TRIGGER");
+                FindObjectOfType<DungeonMaster>().ProgressUp();
             }
+            
         }
 
     }

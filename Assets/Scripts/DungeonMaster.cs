@@ -8,11 +8,13 @@ public class DungeonMaster : MonoBehaviour
     /// <summary>
     /// The number of key Items retrieved
     /// </summary>
-    public static int progress = 0;
+    public int progress = 0;
     /// <summary>
     /// The Index the next scene to load
     /// </summary>
-    public static int level = 2;
+    public int level = 2;
+
+    public bool isCollected = false;
 
     /// <summary>
     /// THe order of the scenes to load
@@ -62,7 +64,9 @@ public class DungeonMaster : MonoBehaviour
     public void Warp()
     {
         Debug.Log("Attempting to Load Scene: " + level);
+        isCollected = false;
         SceneManager.LoadScene(LevelList[level++]);
+        Debug.Log("isCollected:" + isCollected);
 
     }
 
@@ -72,7 +76,9 @@ public class DungeonMaster : MonoBehaviour
     public void ProgressUp()
     {
         progress++;
+        isCollected = true;
         Debug.Log("Progress Increased to: " + progress);
+        Debug.Log("isCollected:" + isCollected);
     }
 
     /// <summary>
