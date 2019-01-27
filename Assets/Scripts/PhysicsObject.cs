@@ -42,7 +42,7 @@ public class PhysicsObject : MonoBehaviour
     {
         targetVelocity = Vector2.zero;
         ComputeVelocity();
-         if (Input.GetButtonDown("Jump"))
+         if (Input.GetButtonDown("Jump") && grounded)
         {
             jump.Play();
         }
