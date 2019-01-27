@@ -37,7 +37,14 @@ namespace Gamekit2D
         public void DeactivateCanvasWithDelay (float delay)
         {
             m_DeactivationCoroutine = StartCoroutine (SetAnimatorParameterWithDelay (delay));
-            gameObject.SetActive(false); //ensure dialogue is not active
+            m_DeactivationCoroutine = StartCoroutine (DelaySetActive (delay));
+            //gameObject.SetActive(false); //ensure dialogue is not active
+        }
+
+        IEnumerator DelaySetActive (float delay)
+        {
+            yield return new WaitForSeconds (delay);
+            gameObject.SetActive(false);
         }
     }
 }
