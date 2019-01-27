@@ -58,7 +58,6 @@ public class DungeonMaster : MonoBehaviour
 
     public void ProgressUp()
     {
-        
         progress++;
         Debug.Log("Progress Increased to: "+progress);
     }

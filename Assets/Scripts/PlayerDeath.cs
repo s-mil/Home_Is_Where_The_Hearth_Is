@@ -46,6 +46,7 @@ public class PlayerDeath : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         isColliding = true;
+        if(!isDead){
         if (collision.gameObject.tag == "spike")
         {
             anim.SetTrigger("DeathHappened");
@@ -60,6 +61,7 @@ public class PlayerDeath : MonoBehaviour
             // or whatever kill script you want
 
             isDead = true;
+        }
         }
 
         if (collision.gameObject.tag == "Warp")
