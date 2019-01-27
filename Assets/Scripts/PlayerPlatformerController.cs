@@ -12,7 +12,7 @@ public class PlayerPlatformerController : PhysicsObject
     public bool wallSide;
     public bool canDash;
     private SpriteRenderer spriteRenderer;
-    private Animator animator;
+    private Animator anim;
     private bool facingRight;
     public float holdSpeed;
     public bool isSliding;
@@ -23,7 +23,7 @@ public class PlayerPlatformerController : PhysicsObject
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         canDash = true;
         facingRight = true;
         isWallJumping = false;
@@ -85,6 +85,7 @@ public class PlayerPlatformerController : PhysicsObject
 
 
         if (move.x > 0.5f){
+            anim.SetTrigger("isWalking");
             facingRight = true;
             spriteRenderer.flipX = false;
             noSlideYet = false;
@@ -93,6 +94,7 @@ public class PlayerPlatformerController : PhysicsObject
                 StopCoroutine(Slide());
             }
         } else if (move.x < -0.5f){
+            anim.SetTrigger("isWalking");
             facingRight = false;
             spriteRenderer.flipX = true;
             noSlideYet = false;
@@ -102,6 +104,7 @@ public class PlayerPlatformerController : PhysicsObject
             }
         } else
         {
+            anim.SetTrigger("isStopped");
             noSlideYet = true;
         }
 
