@@ -14,19 +14,19 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isWalking
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isStopped
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -186,6 +186,32 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &1102242898344694394
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Jump
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 8d975d040e37a8749bcf817277aad201, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &1102365305025873308
 AnimatorState:
   serializedVersion: 5
@@ -281,13 +307,16 @@ AnimatorStateMachine:
     m_Position: {x: 388.7213, y: 132.81128, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102903710556358106}
-    m_Position: {x: 228, y: 264, z: 0}
+    m_Position: {x: 84, y: 252, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102214976387844736}
-    m_Position: {x: 528, y: 276, z: 0}
+    m_Position: {x: 360, y: 288, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102365305025873308}
-    m_Position: {x: 48, y: 156, z: 0}
+    m_Position: {x: 48, y: 132, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102242898344694394}
+    m_Position: {x: 624, y: 276, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101441231781541776}
