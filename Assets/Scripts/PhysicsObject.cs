@@ -122,6 +122,10 @@ public class PhysicsObject : MonoBehaviour
              right = contactPoint.x > center.x;
 
         }
+
+        if (collision.gameObject.tag == "movingPlatform"){
+            
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
