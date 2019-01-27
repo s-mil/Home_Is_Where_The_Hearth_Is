@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f400006c7c19fd84ea4b321650c0ae43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 6157921192427551971}
+  platform: {fileID: 2470767528947248928}
   moveSpeed: 3
   currentPoint: {fileID: 0}
   points:
