@@ -14,6 +14,9 @@ public class PlayerPlatformerController : PhysicsObject
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private bool facingRight;
+    public float holdSpeed;
+    public bool isSliding;
+    public bool noSlideYet;
 
     float tempgravity;
     // Use this for initialization
@@ -24,16 +27,35 @@ public class PlayerPlatformerController : PhysicsObject
         canDash = true;
         facingRight = true;
         isWallJumping = false;
+        isSliding = false;
     }
 
     protected override void ComputeVelocity()
     {
-        
+        gravityModifier = 5;
         Vector2 move = Vector2.zero;
 
-        if (!isDashing) {
-            move.x = Input.GetAxis("Horizontal");
+
+        if (touchIce && !isSliding && Input.GetAxis("Horizontal") < 0.01f && Input.GetAxis("Horizontal") > -0.01f && !noSlideYet)
+        {
+            isSliding = true;
+            StartCoroutine(Slide());
+            noSlideYet = true;
         }
+        else if (isSliding)
+        {
+            if (facingRight)
+            {
+                move.x = 0.5f;
+            } else
+            {
+                move.x = -0.5f;
+            }
+        }
+        else if (!isDashing) {
+            move.x = Input.GetAxis("Horizontal");
+            //holdSpeed = move.x;
+        } 
 
         if (Input.GetButtonDown("Jump") && grounded)
         {
@@ -58,31 +80,30 @@ public class PlayerPlatformerController : PhysicsObject
             }
             StartCoroutine(WallJump());
         }
-
-        if (walljump &&  !grounded)
-        {
-            tempgravity = gravityModifier;
-            gravityModifier = gravityModifier/2;
-        }
-
-        else
-        {
-            Debug.Log("set it back");
-            gravityModifier = 5;
-        }
+        
 
 
 
-        if (move.x > 0.01f){
+        if (move.x > 0.5f){
             facingRight = true;
             spriteRenderer.flipX = false;
-        } else if (move.x < -0.01f){
+            noSlideYet = false;
+            if (isSliding)
+            {
+                StopCoroutine(Slide());
+            }
+        } else if (move.x < -0.5f){
             facingRight = false;
             spriteRenderer.flipX = true;
+            noSlideYet = false;
+            if (isSliding)
+            {
+                StopCoroutine(Slide());
+            }
+        } else
+        {
+            noSlideYet = true;
         }
-
-        animator.SetBool("grounded", grounded);
-        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
         if (Input.GetButtonDown("Fire3") && !isDashing && canDash)
         {
@@ -143,9 +164,14 @@ public class PlayerPlatformerController : PhysicsObject
         canDash = true;
     }
 
+    protected IEnumerator Slide()
+    {
+        isSliding = true;
+        yield return new WaitForSeconds(.25f);
+        isSliding = false;
+    }
 
 
-   
 
 
 

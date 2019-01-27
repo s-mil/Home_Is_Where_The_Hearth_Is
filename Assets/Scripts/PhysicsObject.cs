@@ -16,6 +16,8 @@ public class PhysicsObject : MonoBehaviour
     protected RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
     protected List<RaycastHit2D> hitBufferList = new List<RaycastHit2D>(16);
     public float wallDirection = 0.0f;
+    public bool touchIce;
+
 
     protected const float minMoveDistance = 0.001f;
     protected const float shellRadius = 0.01f;
@@ -129,6 +131,19 @@ public class PhysicsObject : MonoBehaviour
         {
             walljump = false;
             
+        }
+
+        if (collision.gameObject.tag == "ice")
+        {
+            touchIce = false;
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "ice")
+        {
+            touchIce = true;
         }
     }
 
