@@ -53,12 +53,12 @@ TagManager:
   - name: Background
     uniqueID: 2922314179
     locked: 0
+  - name: Snow
+    uniqueID: 3597824567
+    locked: 0
   - name: Foreground
     uniqueID: 2670983625
     locked: 0
   - name: Player
     uniqueID: 305139277
-    locked: 0
-  - name: Snow
-    uniqueID: 3597824567
     locked: 0
