@@ -87,6 +87,11 @@ public class DungeonMaster : MonoBehaviour
     public void Death()
     {
         level--;
+        if(isCollected)
+        {
+            progress--;
+            isCollected=false;
+        }
         Debug.Log("Level Decremented to: " + level);
     }
 
