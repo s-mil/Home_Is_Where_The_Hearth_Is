@@ -293,7 +293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270329862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.47, y: 4.1, z: -10}
+  m_LocalPosition: {x: 0.35, y: 1.06, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1338163099}
@@ -434,12 +434,12 @@ PrefabInstance:
     - target: {fileID: 1630948264061689436, guid: b886a388fa2cc6e40be69dcf41253e1c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.47
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 1630948264061689436, guid: b886a388fa2cc6e40be69dcf41253e1c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.1
+      value: 1.06
       objectReference: {fileID: 0}
     - target: {fileID: 1630948264061689436, guid: b886a388fa2cc6e40be69dcf41253e1c,
         type: 3}
@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 1551206888}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
