@@ -18,6 +18,7 @@ public class PhysicsObject : MonoBehaviour
     public float wallDirection = 0.0f;
     public bool touchIce;
     public AudioSource jump;
+    public AudioSource dash;
 
     public bool onRope;
 
@@ -45,6 +46,10 @@ public class PhysicsObject : MonoBehaviour
          if (Input.GetButtonDown("Jump") && grounded)
         {
             jump.Play();
+        }
+        if(Input.GetButtonDown("Fire3"))
+        {
+            dash.Play();
         }
     }
 
