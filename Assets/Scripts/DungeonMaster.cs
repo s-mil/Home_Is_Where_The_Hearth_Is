@@ -7,7 +7,7 @@ public class DungeonMaster : MonoBehaviour
 {
 
     public static int progress = 0;
-    public static int level = 1;
+    public static int level = 2;
 
     Dictionary<int, int> LevelList = new Dictionary<int, int>
     {
@@ -50,13 +50,16 @@ public class DungeonMaster : MonoBehaviour
     /// </summary>
     public void Warp()
     {
+        Debug.Log("Attempting to Load Scene: "+level);
         SceneManager.LoadScene(LevelList[level++]);
+
     }
 
 
     public void ProgressUp()
     {
-
+        progress++;
+        Debug.Log("Progress Increased to: "+progress);
     }
 
 

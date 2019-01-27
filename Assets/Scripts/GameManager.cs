@@ -28,11 +28,11 @@ public class GameManager : MonoBehaviour
 
     void PlayerDeath()
     {
-        SceneManager.LoadScene("Dream");
+        SceneManager.LoadScene(21);
     }
 
     void Respawn()
     {
-        SceneManager.LoadScene("home01");
+        SceneManager.LoadScene(2);
     }
 }

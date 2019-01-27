@@ -11,6 +11,7 @@ TagManager:
   - wall
   - DM
   - rope
+  - Warp
   layers:
   - Default
   - TransparentFX

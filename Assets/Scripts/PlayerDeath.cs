@@ -58,6 +58,12 @@ public class PlayerDeath : MonoBehaviour
 
                 isDead = true;
             }
+
+            if (collision.gameObject.tag == "Warp"){
+                Debug.Log("Warp COlision");
+               FindObjectOfType<DungeonMaster>().Warp();
+
+            }
     }    
 
    
