@@ -7,6 +7,7 @@ public class PlayerDeath : MonoBehaviour
 
     public bool isColliding;
     public bool isDead;
+    public bool isCollected;
     Animator anim;
 
     private AudioSource audio;
@@ -20,6 +21,7 @@ public class PlayerDeath : MonoBehaviour
         isDead = false;
         anim = GetComponent<Animator>();
         Audio = GetComponent<AudioSource>();
+        isCollected = false;
 
     }
 
@@ -78,9 +80,11 @@ public class PlayerDeath : MonoBehaviour
     {
         if (other.gameObject.tag == "keyitem")
         {
+            if(!isCollected){
             Debug.Log("KEY ITEM TRIGGER");
             FindObjectOfType<DungeonMaster>().ProgressUp();
-
+            isCollected=true;
+            }
         }
 
     }
