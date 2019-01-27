@@ -12,7 +12,7 @@ public class BobTheBuilder : MonoBehaviour
     public GameObject WP1, WP2, WP3, WP4, WP5, WP6, WP7, Chim = null;
     // Start is called before the first frame update
 
-    void Start()
+    void Awake()
     {
 
         int pieces = FindObjectOfType<DungeonMaster>().GetProgress();
