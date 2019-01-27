@@ -122,15 +122,10 @@ public class PhysicsObject : MonoBehaviour
              right = contactPoint.x > center.x;
 
         }
-
-        if (collision.gameObject.tag == "movingPlatform"){
-            
-        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
-
         if (collision.gameObject.tag == "wall")
         {
             walljump = false;
@@ -141,6 +136,7 @@ public class PhysicsObject : MonoBehaviour
         {
             touchIce = false;
         }
+
     }
 
     void OnCollisionStay2D(Collision2D collision)
@@ -148,6 +144,12 @@ public class PhysicsObject : MonoBehaviour
         if (collision.gameObject.tag == "ice")
         {
             touchIce = true;
+        }
+
+        if (collision.gameObject.tag == "movingPlatform" && Input.GetAxis("Horizontal") < 0.1f && Input.GetAxis("Horizontal") > -0.1f && !Input.GetButton("Jump") && !Input.GetButton("Fire3")){
+            transform.parent = collision.transform.parent;
+        } else {
+            transform.parent = null;
         }
     }
 

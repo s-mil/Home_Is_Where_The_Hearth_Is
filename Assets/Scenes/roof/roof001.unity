@@ -22787,6 +22787,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+  - first: {x: -7, y: -3, z: 0}
+    second:
+      m_TileIndex: 3
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: -6, y: -3, z: 0}
     second:
       m_TileIndex: 7
@@ -27426,12 +27435,12 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 570c3059b85ced041aa4ad4c4a0214f6, type: 3}
   - m_RefCount: 1242
     m_Data: {fileID: 21300000, guid: d6bc308b3a242ba4b94163089e03a7fe, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 6
-    m_Data: {fileID: 21300000, guid: 4546b79f082522e4d81fbdfa93a06bd4, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: d8c7ce10239175848b88164efd0d7e2a, type: 3}
+  - m_RefCount: 6
+    m_Data: {fileID: 21300000, guid: 4546b79f082522e4d81fbdfa93a06bd4, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 49
     m_Data: {fileID: 21300000, guid: 38bf0fedb2c5e024dad3cc318abc02c2, type: 3}
   - m_RefCount: 1
@@ -29610,6 +29619,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6157921192675444379, guid: 952b6aa01ec9a03489767b53a4ed8349,
+        type: 3}
+      propertyPath: platform
+      value: 
+      objectReference: {fileID: 2470767528947248928}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 952b6aa01ec9a03489767b53a4ed8349, type: 3}
 --- !u!1001 &1941880986
@@ -29750,3 +29764,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b886a388fa2cc6e40be69dcf41253e1c, type: 3}
+--- !u!1 &2470767528947248928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2470767528947248928, guid: 952b6aa01ec9a03489767b53a4ed8349,
+    type: 3}
+  m_PrefabInstance: {fileID: 1850802190}
+  m_PrefabAsset: {fileID: 0}
