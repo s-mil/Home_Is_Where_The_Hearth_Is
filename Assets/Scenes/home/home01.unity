@@ -8914,12 +8914,12 @@ PrefabInstance:
     - target: {fileID: 4757985296786046453, guid: 03d8ce185df9c0445b2d7d5196c43c0c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.28
+      value: -5.1
       objectReference: {fileID: 0}
     - target: {fileID: 4757985296786046453, guid: 03d8ce185df9c0445b2d7d5196c43c0c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.08
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 4757985296786046453, guid: 03d8ce185df9c0445b2d7d5196c43c0c,
         type: 3}
@@ -8968,33 +8968,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4757985296786046451, guid: 03d8ce185df9c0445b2d7d5196c43c0c,
         type: 3}
-      propertyPath: moveWithTransform
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757985296786046451, guid: 03d8ce185df9c0445b2d7d5196c43c0c,
-        type: 3}
-      propertyPath: cullingMode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757985296786046451, guid: 03d8ce185df9c0445b2d7d5196c43c0c,
-        type: 3}
-      propertyPath: prewarm
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757985296786046448, guid: 03d8ce185df9c0445b2d7d5196c43c0c,
-        type: 3}
-      propertyPath: m_SortMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757985296786046448, guid: 03d8ce185df9c0445b2d7d5196c43c0c,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -697142729
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757985296786046448, guid: 03d8ce185df9c0445b2d7d5196c43c0c,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 4
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03d8ce185df9c0445b2d7d5196c43c0c, type: 3}
