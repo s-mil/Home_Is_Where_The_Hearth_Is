@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Follow: {fileID: 322209438}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 6.24
+    OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -494,7 +494,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 6.24
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
