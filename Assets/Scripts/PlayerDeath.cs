@@ -64,6 +64,12 @@ public class PlayerDeath : MonoBehaviour
                FindObjectOfType<DungeonMaster>().Warp();
 
             }
+
+            if (collision.gameObject.tag == "keyitem"){
+                Debug.Log("keyitem Colision");
+               FindObjectOfType<DungeonMaster>().ProgressUp();
+
+            }
     }    
 
    

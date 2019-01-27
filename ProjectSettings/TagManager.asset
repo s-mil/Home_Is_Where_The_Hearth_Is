@@ -12,6 +12,7 @@ TagManager:
   - DM
   - rope
   - Warp
+  - keyitem
   layers:
   - Default
   - TransparentFX
