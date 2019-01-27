@@ -84,7 +84,7 @@ public class PlayerPlatformerController : PhysicsObject
 
 
 
-        if (move.x > 0.5f){
+        if (move.x > 0.1f){
             anim.SetTrigger("isWalking");
             facingRight = true;
             spriteRenderer.flipX = false;
@@ -93,7 +93,7 @@ public class PlayerPlatformerController : PhysicsObject
             {
                 StopCoroutine(Slide());
             }
-        } else if (move.x < -0.5f){
+        } else if (move.x < -0.1f){
             anim.SetTrigger("isWalking");
             facingRight = false;
             spriteRenderer.flipX = true;
