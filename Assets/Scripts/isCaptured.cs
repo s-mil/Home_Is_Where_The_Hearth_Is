@@ -5,10 +5,13 @@ using UnityEngine;
 public class isCaptured : MonoBehaviour
 {
     Animator anim;
+    GameObject Portal;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        Portal = GameObject.FindGameObjectWithTag("Warp");
+        Portal.SetActive(false);
     }
 
     void OnTriggerEnter2D (Collider2D collision)
@@ -17,6 +20,7 @@ public class isCaptured : MonoBehaviour
         {
             Debug.Log("capture collision detected!");
             anim.SetTrigger("isCaptured");
+            Portal.SetActive(true);
         }
     }
 }
