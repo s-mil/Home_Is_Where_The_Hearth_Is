@@ -5,16 +5,76 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 2f8b9160b02b3cf49a1c276286dea2ef
   - enabled: 1
-    path: Assets/Scenes/Dream.unity
-    guid: 700e0817fa657ba4994a8839f4e40b92
+    path: Assets/Scenes/tutorial.unity
+    guid: 9f9929c4da6e008408a47226429a6d59
   - enabled: 1
     path: Assets/Scenes/home/home01.unity
     guid: 79f03da20d20cf84c9fc8b7acbf1b860
+  - enabled: 1
+    path: Assets/Scenes/floor/floor02.unity
+    guid: ccb771dd816607742aad594106739623
+  - enabled: 1
+    path: Assets/Scenes/wall/wall03.unity
+    guid: 23c60c90624cabe45af729f71064991e
+  - enabled: 1
+    path: Assets/Scenes/door/door001.unity
+    guid: 8dc21b1e914b22e45a6023d655bc0826
+  - enabled: 1
+    path: Assets/Scenes/door/door04.unity
+    guid: 14a02fbe7a37e0e44a672ecf88a96cea
+  - enabled: 1
+    path: Assets/Scenes/window/window05.unity
+    guid: 26317d402dcc71b45a1223ebe94253e5
+  - enabled: 1
+    path: Assets/Scenes/window/window001.unity
+    guid: 9042c51822c693845a5fcaef6979ec9c
+  - enabled: 1
+    path: Assets/Scenes/window/window002.unity
+    guid: 6addcdd1570fd24448f8f1b36d9c3f31
+  - enabled: 1
+    path: Assets/Scenes/roof/roof001.unity
+    guid: 28a0723a7f6ddf44bbec5a4bd582d1a6
+  - enabled: 1
+    path: Assets/Scenes/roof/roof06.unity
+    guid: b4890b154cbbc11459081897783c1307
+  - enabled: 1
+    path: Assets/Scenes/roof/roof002.unity
+    guid: 2ea3f96bb19ffa34fa72e8dcce7a1273
+  - enabled: 1
+    path: Assets/Scenes/roof/roof003.unity
+    guid: 2f987941f0e2c8043808c768ff95a5d1
+  - enabled: 1
+    path: Assets/Scenes/roof/roof004.unity
+    guid: ef8c564fda9ff2b4bbdc95f84ca17d92
+  - enabled: 1
+    path: Assets/Scenes/fire/fire001.unity
+    guid: 76ccf17d4271f7a43a29aa67f699d9c0
+  - enabled: 1
+    path: Assets/Scenes/fire/fire002.unity
+    guid: 8a8854e7388017b4a8fb99db6ca5d0eb
+  - enabled: 1
+    path: Assets/Scenes/fire/fire07.unity
+    guid: 22b01d0eb12632b4dbbb5df9ca97fa23
+  - enabled: 1
+    path: Assets/Scenes/fire/fire003.unity
+    guid: 78a3b29a8629fc44bb6490f41aa15e85
+  - enabled: 1
+    path: Assets/Scenes/fire/fire004.unity
+    guid: fdd921cbc5202d64f9c4e8959675508f
+  - enabled: 1
+    path: Assets/Scenes/fire/fire005.unity
+    guid: 01e5e4e13a9b68748b78ef33b9da2df8
+  - enabled: 1
+    path: Assets/Scenes/fire/fire006.unity
+    guid: 7a157f375886e31488f418fdc9a190d9
+  - enabled: 1
+    path: Assets/Scenes/credits.unity
+    guid: 84c0ee1baab419b42844cadae470f7d2
+  - enabled: 1
+    path: Assets/Scenes/Dream.unity
+    guid: 700e0817fa657ba4994a8839f4e40b92
   m_configObjects: {}

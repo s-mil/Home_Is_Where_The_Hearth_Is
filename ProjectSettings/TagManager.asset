@@ -9,6 +9,7 @@ TagManager:
   - movingPlatform
   - ice
   - wall
+  - DM
   layers:
   - Default
   - TransparentFX
