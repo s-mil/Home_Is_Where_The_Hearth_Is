@@ -43,36 +43,46 @@ public class PlayerDeath : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D collision){
-            isColliding =  true;
-            if (collision.gameObject.tag == "spike") {
-                anim.SetTrigger("DeathHappened");
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        isColliding = true;
+        if (collision.gameObject.tag == "spike")
+        {
+            anim.SetTrigger("DeathHappened");
 
-                if(isDead == false){
-                    Audio.Play();
-                }
-
-                //Destroy(gameObject); 
-                FindObjectOfType<GameManager>().GameOver();
-                // or whatever kill script you want
-
-                isDead = true;
+            if (isDead == false)
+            {
+                Audio.Play();
             }
 
-            if (collision.gameObject.tag == "Warp"){
-                Debug.Log("Warp COlision");
-               FindObjectOfType<DungeonMaster>().Warp();
+            //Destroy(gameObject); 
+            FindObjectOfType<GameManager>().GameOver();
+            // or whatever kill script you want
 
-            }
+            isDead = true;
+        }
 
-            if (collision.gameObject.tag == "keyitem"){
-                Debug.Log("keyitem Colision");
-               FindObjectOfType<DungeonMaster>().ProgressUp();
+        if (collision.gameObject.tag == "Warp")
+        {
+            Debug.Log("Warp COlision");
+            FindObjectOfType<DungeonMaster>().Warp();
 
-            }
-    }    
+        }
 
-   
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "keyitem")
+        {
+            Debug.Log("KEY ITEM TRIGGER");
+            FindObjectOfType<DungeonMaster>().ProgressUp();
+
+        }
+
+    }
+
 
     // /// <summary>
     // /// The method that respawns the player at Home
