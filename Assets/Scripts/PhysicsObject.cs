@@ -17,6 +17,7 @@ public class PhysicsObject : MonoBehaviour
     protected List<RaycastHit2D> hitBufferList = new List<RaycastHit2D>(16);
     public float wallDirection = 0.0f;
     public bool touchIce;
+    public AudioSource jump;
 
     public bool onRope;
 
@@ -41,6 +42,10 @@ public class PhysicsObject : MonoBehaviour
     {
         targetVelocity = Vector2.zero;
         ComputeVelocity();
+         if (Input.GetButtonDown("Jump"))
+        {
+            jump.Play();
+        }
     }
 
     protected virtual void ComputeVelocity()
