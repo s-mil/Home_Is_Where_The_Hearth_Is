@@ -27,17 +27,33 @@ public class PlayMusic : MonoBehaviour {
 
 	public void PlayLevelMusic()
 	{
+		DontDestroyOnLoad(musicSource.clip);
 		//This switch looks at the last loadedLevel number using the scene index in build settings to decide which music clip to play.
 		switch (SceneManager.GetActiveScene().buildIndex)
 		{
 			//If scene index is 0 (usually title scene) assign the clip titleMusic to musicSource
 			case 0:
 				musicSource.clip = menuSettings.mainMenuMusicLoop;
+				musicSource.Play ();
 				break;
 			//If scene index is 1 (usually main scene) assign the clip mainMusic to musicSource
 			case 1:
-                Debug.Log("Scene index is 1, setting music to " + menuSettings.musicLoopToChangeTo);
+                Debug.Log("Scene index is 1 (tutorial), setting music to " + menuSettings.musicLoopToChangeTo);
 				musicSource.clip = menuSettings.musicLoopToChangeTo;
+				musicSource.Play ();
+				break;
+			case 2:
+                Debug.Log("Scene index is 2(home), setting music to " + menuSettings.musicLoopToChangeTo);
+				musicSource.clip = menuSettings.musicLoopToChangeTo;
+				musicSource.Play ();
+				break;
+			default:
+				if(musicSource.clip == menuSettings.musicLoopToChangeTo)
+				{
+					Debug.Log("Scene index is anything else, setting music to " + menuSettings.OverworldMusic);
+					musicSource.clip = menuSettings.OverworldMusic;
+					musicSource.Play ();
+				}
 				break;
 
 		}
@@ -46,7 +62,7 @@ public class PlayMusic : MonoBehaviour {
 		//Fade up the volume very quickly, over resetTime seconds (.01 by default)
 		FadeUp (resetTime);
 		//Play the assigned music clip in musicSource
-		musicSource.Play ();
+		//musicSource.Play ();
 	}
 	
 	//Used if running the game in a single scene, takes an integer music source allowing you to choose a clip by number and play.
