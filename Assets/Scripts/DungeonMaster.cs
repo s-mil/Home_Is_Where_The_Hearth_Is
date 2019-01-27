@@ -52,7 +52,7 @@ public class DungeonMaster : MonoBehaviour
     /// </summary>
     public void Warp()
     {
-        SceneManager.LoadScene(LevelList(level++));
+        SceneManager.LoadScene(LevelList[level++]);
     }
 
 
