@@ -34,10 +34,8 @@ public class DungeonMaster : MonoBehaviour
         { 21, 17},
         { 22, 18},
         { 23, 19},
-        { 24, 20},
-        { 25, 21},
-        { 26, 2 },
-        { 27, 22}
+        { 24, 2 },
+        { 25, 20}
     };
 
     private void Awake()

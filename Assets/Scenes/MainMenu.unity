@@ -209,6 +209,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: d0349408e9a4cea46950aefce2db76d5, type: 3}
+    - target: {fileID: 8286744, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11467570, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
       propertyPath: m_Text
       value: 'Home is
