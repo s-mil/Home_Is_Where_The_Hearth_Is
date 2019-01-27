@@ -35,6 +35,9 @@ public class PlayerPlatformerController : PhysicsObject
         gravityModifier = 5;
         Vector2 move = Vector2.zero;
 
+        if(onRope){
+            grounded = true;
+        }
 
         if (touchIce && !isSliding && Input.GetAxis("Horizontal") < 0.01f && Input.GetAxis("Horizontal") > -0.01f && !noSlideYet)
         {
@@ -140,7 +143,6 @@ public class PlayerPlatformerController : PhysicsObject
         else
         {
             targetVelocity = move * maxSpeed;
-            
         }
     }
 

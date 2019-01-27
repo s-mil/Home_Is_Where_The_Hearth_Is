@@ -18,6 +18,7 @@ public class PhysicsObject : MonoBehaviour
     public float wallDirection = 0.0f;
     public bool touchIce;
 
+    public bool onRope;
 
     protected const float minMoveDistance = 0.001f;
     protected const float shellRadius = 0.01f;
@@ -136,7 +137,6 @@ public class PhysicsObject : MonoBehaviour
         {
             touchIce = false;
         }
-
     }
 
     void OnCollisionStay2D(Collision2D collision)
@@ -153,6 +153,15 @@ public class PhysicsObject : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D collision){
+        if (collision.gameObject.tag == "rope"){
+            onRope = true;
+        }
+    }
 
-
+    void OnTriggerExit2D(Collider2D collision){
+        if (collision.gameObject.tag == "rope"){
+            onRope = false;
+        }
+    }
 }
