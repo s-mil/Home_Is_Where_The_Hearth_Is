@@ -19,7 +19,7 @@ public class FlexibleUIText : FlexibleUI
     protected override void OnSkinUI()
     {
         base.OnSkinUI();
-        text.color = flexibleUIData.textColor;
+        text.color = Color.white;
         if (useMainFont)
         {
             text.font = flexibleUIData.font;
